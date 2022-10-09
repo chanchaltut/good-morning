@@ -1,0 +1,305 @@
+@import url("https://fonts.googleapis.com/css2?family=Abyssinica+SIL&family=Dancing+Script&family=Work+Sans:wght@100;400&display=swap");
+
+:root {
+  --var-main-bg: linear-gradient(45deg,
+  rgb(254 237 131 / 34%),
+  rgb(239 144 143 / 41%));
+}
+
+* {
+  font-family: "Abyssinica SIL", serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+body {
+  position: relative;
+  background: url("/img/bg-main.webp") no-repeat center center/cover;
+}
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  position: relative;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  background: url(/img/birds.gif) no-repeat center top/cover;
+  width: 10rem;
+  height: 10rem;
+  top: 0;
+  right: 0;
+  opacity: 0;
+  animation: birds-v 2.5s ease 4.2s forwards, birds-f 6s linear 4.2s infinite alternate-reverse;
+}
+
+.hero h1 {
+  margin: 2rem;
+  z-index: 10;
+  font-size: 3.5rem;
+  font-family: "Dancing Script", cursive;
+  text-shadow: 1px 1px 5px black;
+}
+
+.hero p {
+  margin: 1rem;
+  font-size: 1.1rem;
+  text-align: center;
+}
+
+.central-image {
+  width: 20rem;
+  height: 15rem;
+  margin-bottom: 1rem;
+  position: relative;
+}
+
+.central-image img {
+  position: absolute;
+
+}
+
+.cnt-3clouds {
+  top: 20%;
+  left: 0;
+  z-index: 4;
+  width: 20rem;
+  height: auto;
+  opacity: 0;
+  animation: smallclouds 2s ease 1s forwards;
+}
+
+.cnt-sun {
+  bottom: 30%;
+  left: 33%;
+  z-index: 5;
+  width: 10rem;
+  height: auto;
+  opacity: 0;
+  animation: sunrising 1.5s ease-in-out 2.5s 1 forwards, sunring 4s linear 4.1s infinite;
+}
+
+.cnt-2clouds {
+  top: 25%;
+  right: 0;
+  z-index: 6;
+  width: 20rem;
+  height: auto;
+  opacity: 0;
+  animation: bigclouds 2s ease 1s 1 forwards;
+}
+
+.wish {
+  background: var(--var-main-bg);
+  border: 2px solid rgb(255 255 255);
+  border-radius: 0.5rem;
+  position: relative;
+  margin: 0 1rem;
+  padding-top: 0.5rem;
+  text-align: center;
+}
+
+.wish span {
+  font-size: 1.5rem;
+}
+
+.wish p:nth-child(2) {
+  text-decoration: underline;
+}
+
+.form-box {
+  margin: 1rem;
+  max-width: 100%;
+}
+
+.input-area {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.input-area input {
+  border: 2px solid white;
+  font-size: 1.5rem;
+  background: var(--var-main-bg);
+  color: white;
+  margin: 1rem;
+  padding: 0.25rem;
+  text-align: center;
+  border-radius: 0.5rem;
+}
+
+input::placeholder {
+  color: white;
+  font-size: 1.3rem;
+  text-align: center;
+}
+
+:focus-visible {
+  outline: none;
+}
+
+.input-area button {
+  border: 2px solid white;
+  font-size: 1.5rem;
+  background: var(--var-main-bg);
+  color: white;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  padding: 0.25rem 0.5rem;
+}
+
+.music {
+  display: grid;
+  place-items: center;
+}
+
+.share-btn {
+  margin: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.hide {
+  display: none;
+}
+
+.share-btn span {
+  background: var(--var-main-bg);
+  border: 2px solid white;
+  border-radius: 10px;
+  padding: 0.3rem 2rem;
+  text-transform: uppercase;
+}
+
+.share-btn i {
+  margin: 1rem;
+  font-size: 2rem;
+}
+
+/* Key Frames */
+
+@keyframes smallclouds {
+  0% {
+    opacity: 0;
+    left: -100%;
+
+  }
+
+  100% {
+    opacity: 1;
+    left: 0;
+  }
+}
+
+@keyframes bigclouds {
+  0% {
+    opacity: 0;
+    right: -100%;
+
+  }
+
+  100% {
+    opacity: 1;
+    right: 0;
+  }
+}
+
+@keyframes sunrising {
+  0% {
+    opacity: 0;
+    bottom: 0;
+
+  }
+
+  100% {
+    opacity: 1;
+    bottom: 30;
+  }
+}
+
+@keyframes sunring {
+  0% {
+    rotate: 0deg;
+
+  }
+
+  100% {
+    rotate: 360deg;
+  }
+}
+
+
+@keyframes birds-v {
+  0% {
+    opacity: 0;
+
+  }
+
+  30% {
+    opacity: 0.20;
+  }
+
+  70% {
+    opacity: 0.80;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes birds-f {
+  0% {
+    right: 0;
+
+  }
+
+  100% {
+    right: calc(100% - 10rem);
+  }
+}
+
+
+/* Media Query Starts */
+
+@media (max-width: 800px) {
+  .hero h1 {
+    font-size: 3.5rem;
+  }
+}
+
+@media (max-width: 500px) {
+  .hero h1 {
+    font-size: 2.8rem;
+  }
+
+  .input-area {
+    flex-direction: column;
+  }
+
+  .input-area input {
+    margin: 1rem 0;
+    max-width: 90%;
+  }
+
+  .hero::before {
+
+    animation: birds-v 2.5s ease 4.6s forwards, birds-f 6s linear 4.6s infinite alternate-reverse;
+  }
+
+  
+}

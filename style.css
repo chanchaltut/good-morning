@@ -106,7 +106,8 @@ body {
   animation: bigclouds 2s ease 1s 1 forwards;
 }
 
-.wish {
+.wish,
+.name-box {
   background: linear-gradient(
     45deg,
     rgb(255 244 179 / 16%),
@@ -115,10 +116,13 @@ body {
   border: var(--border);
   border-radius: 0.5rem;
   position: relative;
-  margin: 0 1rem;
+  margin: 1rem;
   padding-top: 0.5rem;
-  /* text-align: center; */
   color: black;
+}
+
+.name-box {
+  display: none;
 }
 
 .wish span {
@@ -149,7 +153,7 @@ p span {
 }
 
 .fa-quote-left {
-  margin: 0 1rem 1rem;
+  margin-left: 2rem;
   font-size: 2rem;
 }
 
@@ -353,5 +357,10 @@ input::placeholder {
   .hero::before {
     animation: birds-v 2.5s ease 4.6s forwards,
       birds-f 6s linear 4.6s infinite alternate-reverse;
+  }
+
+  .wish,
+  .name-box {
+    min-width: 92%;
   }
 }

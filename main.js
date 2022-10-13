@@ -7,13 +7,13 @@ const goBTN = document.querySelector("#go-btn");
 let sname = document.querySelector("#nameinput");
 const wish = document.querySelector(".wish");
 const audio = document.getElementById("my_audio");
+const nameBox = document.querySelector(".name-box");
 
-sname.addEventListener("click",function () {
-  audio.play()
-})
+sname.addEventListener("click", function () {
+  audio.play();
+});
 
 window.addEventListener("keydown", (e) => {
-  console.log("the button that was pressed is: ", e.key);
   if (e.key == "Enter") {
     goBTN.click();
   }
@@ -46,7 +46,8 @@ const checkName = () => {
     Name = Name.replace(/-/g, " ");
     yourName.textContent = Name;
     msg.textContent =
-      sname.value + " is wishing you a very good morning full of positivity and spirit :)";
+      sname.value +
+      " is wishing you a very good morning full of positivity and spirit :)";
   }
 };
 
@@ -67,7 +68,9 @@ const createGreeting = () => {
     shareBTN.classList.remove("hide");
     formBox.style.display = "none";
     yourName.textContent = sname;
-    msg.textContent = " is wishing you a very good morning full of positivity and spirit :)";
+    msg.textContent =
+      " is wishing you a very good morning full of positivity and spirit :)";
+    nameBox.style.display = "block";
     window.scrollTo(0, 0);
   } else {
     alert("Please Type Your Name First");
